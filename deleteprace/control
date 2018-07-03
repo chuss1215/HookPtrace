@@ -1,0 +1,9 @@
+Package: com.clf.deleteptrace
+Name: DeletePrace
+Depends: mobilesubstrate
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: An awesome MobileSubstrate tweak!
+Maintainer: clf
+Author: clf
+Section: Tweaks
