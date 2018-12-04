@@ -21,3 +21,21 @@ static int $ptraceHook(int request, pid_t pid, caddr_t addr, int data) {
         MSHookFunction((void *)MSFindSymbol(NULL,"_ptrace"), (void *)$ptraceHook, (void **)&_ptraceHook);
 }
 
+
+//hook getenv越狱检测
+static char *(*old_getenv)(const char *str);
+
+char *new_getenv(const char *str)
+{	
+//	printf("%s\n-----",str);
+//	return old_getenv(str);
+       return NULL;
+}
+
+%ctor
+{
+	MSHookFunction((void *)getenv,(void *)new_getenv, (void **)&old_getenv);
+}
+
+
+
